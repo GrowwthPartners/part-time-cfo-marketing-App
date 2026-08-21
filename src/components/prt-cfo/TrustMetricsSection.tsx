@@ -1,5 +1,5 @@
 const metrics = [
-  { label: 'Companies trusted us', value: '500+', tone: 'yellow', size: 'lg' },
+  { label: 'Companies trusted us', value: '200+', tone: 'yellow', size: 'lg' },
   { label: '5-star rating', value: '*****', tone: 'gray', size: 'sm' },
   { label: 'Financial analysis', value: 'Chart', tone: 'deep', size: 'xl' },
   { label: 'Strategic planning', value: 'Goal', tone: 'yellow-strong', size: 'md' },

@@ -487,6 +487,25 @@ textarea.pcfo-input {
   grid-column: 1 / -1;
 }
 
+.pcfo-form button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.pcfo-form-status {
+  margin: 16px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.pcfo-form-status-success {
+  color: var(--pcfo-accent-800);
+}
+
+.pcfo-form-status-error {
+  color: #9f1239;
+}
+
 .pcfo-note {
   margin: 16px 0 0;
   font-size: 12.5px;
