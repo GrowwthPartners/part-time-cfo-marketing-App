@@ -7,7 +7,7 @@ const inclusions = [
 function PricingSection() {
   return (
     <section className="pcfo-section pcfo-pricing" id="pricing">
-      <div className="pcfo-pricing-panel">
+      <div className="pcfo-pricing-panel shadow-md">
         <div>
           <h2>Fractional CFO packages</h2>
           <p>Flexible engagements built around your stage and needs.</p>

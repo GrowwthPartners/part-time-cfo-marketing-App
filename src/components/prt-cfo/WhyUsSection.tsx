@@ -1,3 +1,5 @@
+import Reveal from './Reveal'
+
 const reasons = [
   {
     title: '5-Star Rated Services',
@@ -16,15 +18,17 @@ const reasons = [
 function WhyUsSection() {
   return (
     <section className="pcfo-section" id="why">
-      <h2>Business finances shouldn&apos;t be led by gut instinct. They should be led by experts.</h2>
-      <p className="pcfo-kicker">Why choose us?</p>
+      <Reveal>
+        <h2>Business finances shouldn&apos;t be led by gut instinct. They should be led by experts.</h2>
+        <p className="pcfo-kicker">Why choose us?</p>
+      </Reveal>
       <div className="pcfo-reason-grid">
-        {reasons.map((reason) => (
-          <article className="pcfo-card" key={reason.title}>
+        {reasons.map((reason, index) => (
+          <Reveal className="pcfo-card" delay={index * 0.07} key={reason.title}>
             <span className="pcfo-card-icon" aria-hidden="true" />
             <h3>{reason.title}</h3>
             <p>{reason.description}</p>
-          </article>
+          </Reveal>
         ))}
       </div>
     </section>

@@ -34,11 +34,11 @@ function PartTimeCfoPage() {
           <TrustMetricsSection />
           <BenefitsSection />
           <QuestionsSection />
-          <SocialProofSection/>
-          <MeetJatinSection/>
           <ConsultationSection />
           <WhyUsSection />
+          <MeetJatinSection/>
           <PricingSection />
+          <SocialProofSection/>
           <ComplianceSection />
           <FinalCtaSection />
         </main>
