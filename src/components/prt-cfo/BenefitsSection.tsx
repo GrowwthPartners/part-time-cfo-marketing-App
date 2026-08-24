@@ -1,3 +1,5 @@
+import Reveal from './Reveal'
+
 const audiences = [
   {
     title: 'Startups',
@@ -23,17 +25,23 @@ const audiences = [
 function BenefitsSection() {
   return (
     <section className="pcfo-section" id="benefits">
-      <p className="pcfo-kicker">Who it&apos;s for</p>
-      <h2>Who benefits from Growwth&apos;s Fractional CFO services?</h2>
+      <Reveal>
+        <p className="pcfo-kicker">Who it&apos;s for</p>
+        <h2>Who benefits from Growwth&apos;s Fractional CFO services?</h2>
+      </Reveal>
       <div className="pcfo-audience-list">
-        {audiences.map((audience) => (
-          <article className="pcfo-audience-row" key={audience.title}>
+        {audiences.map((audience, index) => (
+          <Reveal
+            className="pcfo-audience-row"
+            delay={index * 0.06}
+            key={audience.title}
+          >
             <h3>
               <span aria-hidden="true" />
               {audience.title}
             </h3>
             <p>{audience.description}</p>
-          </article>
+          </Reveal>
         ))}
       </div>
       <p className="pcfo-inline-cta">
