@@ -50,8 +50,8 @@ export default function TrustedLogosSection() {
   )
 
   return (
-    <section className="relative left-1/2 mt-12 w-screen -translate-x-1/2 px-4 sm:px-6 lg:px-8">
-      <div className="overflow-hidden rounded-[2rem] border border-[var(--pcfo-divider)] bg-[var(--pcfo-bg)] px-5 py-10 shadow-[0_24px_80px_rgba(32,30,29,0.08)] sm:px-7 lg:px-10">
+    <section className="relative left-1/2 mt-14 w-screen -translate-x-1/2 border-y border-[rgba(138,109,0,0.14)] bg-[radial-gradient(circle_at_12%_12%,rgba(255,204,51,0.22),transparent_30%),linear-gradient(135deg,#ffffff_0%,#fffbea_48%,#fff3c4_100%)] py-16">
+      <div className="overflow-hidden px-5 sm:px-8 lg:px-12">
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 18 }}
           whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
@@ -59,6 +59,9 @@ export default function TrustedLogosSection() {
           viewport={{ once: true, amount: 0.35 }}
           className="mx-auto max-w-3xl text-center"
         >
+          <p className="text-xs font-black uppercase tracking-[0.18em] text-[var(--pcfo-accent-700)]">
+            Trusted by operators
+          </p>
           <h3 className="mt-3 text-2xl font-black leading-tight tracking-normal text-[var(--pcfo-text)] sm:text-3xl">
             Trusted by 200+ startups and businesses around the world
           </h3>
@@ -68,10 +71,28 @@ export default function TrustedLogosSection() {
           </p>
         </motion.div>
 
+        {isMobile === true && (
+          <div className="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-3">
+            {logos.slice(0, 6).map((logo, index) => (
+              <div
+                key={`${index}-${logo}`}
+                className="flex h-20 items-center justify-center rounded-2xl border border-[rgba(138,109,0,0.12)] bg-[radial-gradient(circle_at_12%_12%,rgba(255,204,51,0.22),transparent_30%),linear-gradient(135deg,#ffffff_0%,#fffbea_48%,#fff3c4_100%)] px-4 py-3 shadow-[0_8px_22px_rgba(92,71,0,0.05)]"
+              >
+                <img
+                  src={logo}
+                  alt="Partner logo"
+                  className="max-h-15 w-auto max-w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        )}
+
         {isMobile === false && (
           <div className="relative mt-10">
-            <div className="absolute inset-y-0 left-0 z-10 w-14 bg-gradient-to-r from-[var(--pcfo-bg)] to-transparent" />
-            <div className="absolute inset-y-0 right-0 z-10 w-14 bg-gradient-to-l from-[var(--pcfo-bg)] to-transparent" />
+            <div className="absolute inset-y-0 left-0 z-10 w-14 bg-gradient-to-r from-[#fffbea] to-transparent" />
+            <div className="absolute inset-y-0 right-0 z-10 w-14 bg-gradient-to-l from-[#fff3c4] to-transparent" />
 
             <div className="overflow-hidden">
               <motion.div
@@ -96,12 +117,12 @@ export default function TrustedLogosSection() {
                 {logoList.map((logo, index) => (
                   <div
                     key={`${index}-${logo}`}
-                    className="mx-5 flex h-24 w-40 shrink-0 items-center justify-center rounded-[1.5rem] border border-[var(--pcfo-divider)] bg-[var(--pcfo-surface)] px-5 py-4 shadow-[0_12px_36px_rgba(32,30,29,0.05)]"
+                    className="mx-4 flex h-20 w-36 shrink-0 items-center justify-center rounded-2xl border border-[rgba(138,109,0,0.12)] bg-[radial-gradient(circle_at_12%_12%,rgba(255,204,51,0.22),transparent_30%),linear-gradient(135deg,#ffffff_0%,#fffbea_48%,#fff3c4_100%)] px-5 py-4 shadow-[0_8px_22px_rgba(92,71,0,0.05)]"
                   >
                     <img
                       src={logo}
                       alt="Partner logo"
-                      className="max-h-12 w-auto max-w-full object-contain transition duration-300 hover:scale-105"
+                      className="max-h-14 w-auto max-w-full object-contain transition duration-300 hover:scale-105"
                       loading="lazy"
                     />
                   </div>
