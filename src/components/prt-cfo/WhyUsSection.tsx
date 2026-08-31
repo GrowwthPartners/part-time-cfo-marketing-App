@@ -30,6 +30,13 @@ function WhyUsSection() {
             <p>{reason.description}</p>
           </Reveal>
         ))}
+        <Reveal className="pcfo-why-visual" delay={0.24}>
+          <img src="/image/images.webp" alt="CFO growth planning and reporting" />
+          <div className="pcfo-why-visual-card">
+            <span>Expert finance view</span>
+            <strong>Better decisions start with clearer numbers.</strong>
+          </div>
+        </Reveal>
       </div>
     </section>
   )
