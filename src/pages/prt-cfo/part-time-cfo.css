@@ -97,6 +97,24 @@
   gap: 28px;
 }
 
+.pcfo-nav-panel {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.pcfo-menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(138, 109, 0, 0.18);
+  border-radius: 999px;
+  background: var(--pcfo-accent-100);
+  color: var(--pcfo-text);
+  cursor: pointer;
+}
+
 .pcfo-nav-links a,
 .pcfo-footer a {
   color: var(--pcfo-text);
@@ -1172,15 +1190,53 @@ textarea.pcfo-input {
   }
 
   .pcfo-nav {
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
+    gap: 14px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .pcfo-menu-toggle {
+    display: inline-grid;
+    margin-left: auto;
+  }
+
+  .pcfo-nav-panel {
+    display: none;
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 14px;
+    border: 1px solid rgba(138, 109, 0, 0.14);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 18px 48px rgba(92, 71, 0, 0.1);
+  }
+
+  .pcfo-nav-panel-open {
+    display: flex;
   }
 
   .pcfo-nav-links {
-    order: 3;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .pcfo-nav-links a {
+    padding: 10px 12px;
+    border-radius: 14px;
+  }
+
+  .pcfo-nav-links a:hover {
+    background: var(--pcfo-accent-100);
+  }
+
+  .pcfo-nav-panel .pcfo-btn {
     width: 100%;
-    overflow-x: auto;
-    padding-bottom: 4px;
   }
 
   .pcfo-hero-main {
@@ -1230,6 +1286,11 @@ textarea.pcfo-input {
     grid-template-columns: 1fr;
   }
 
+  .pcfo-audience-row {
+    gap: 12px;
+    align-items: start;
+  }
+
   .pcfo-benefits-visual img {
     min-height: 360px;
   }
@@ -1257,6 +1318,12 @@ textarea.pcfo-input {
 
   .pcfo-hero {
     padding-top: 56px;
+  }
+
+  .pcfo-brand img {
+    max-width: 190px;
+    height: 34px;
+    object-fit: contain;
   }
 
   .pcfo-hero h1 {
@@ -1296,12 +1363,70 @@ textarea.pcfo-input {
     grid-template-columns: 1fr;
   }
 
+  #benefits,
+  #why,
+  .pcfo-region {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  #benefits::before,
+  #why::before,
+  .pcfo-region::before {
+    inset: 18px 10px;
+    border-radius: 28px;
+  }
+
+  #benefits > div:first-child,
+  #benefits .pcfo-inline-cta,
+  #why > div:first-child,
+  #why .pcfo-reason-grid,
+  .pcfo-region-heading,
+  .pcfo-region-grid,
+  .pcfo-region-close-wrap {
+    padding-inline: 0;
+  }
+
+  #benefits h2,
+  #why h2,
+  .pcfo-region-heading h2 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .pcfo-audience-row {
+    gap: 10px;
+    padding: 22px 0;
+  }
+
+  .pcfo-audience-row:hover {
+    padding-inline: 0;
+    background: transparent;
+  }
+
+  .pcfo-audience-row h3 {
+    padding-left: 24px;
+    font-size: 21px;
+  }
+
+  .pcfo-audience-row h3 span {
+    top: 5px;
+    width: 12px;
+    height: 12px;
+  }
+
   .pcfo-reason-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .pcfo-card {
+    padding: 22px;
+    border-radius: 22px;
   }
 
   .pcfo-why-visual {
     min-height: 280px;
+    border-radius: 22px;
   }
 
   .pcfo-why-visual img {
@@ -1318,6 +1443,67 @@ textarea.pcfo-input {
 
   .pcfo-benefits-visual img {
     min-height: 300px;
+  }
+
+  .pcfo-benefits-visual-card,
+  .pcfo-why-visual-card {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .pcfo-benefits-visual-card strong,
+  .pcfo-why-visual-card strong {
+    font-size: 17px;
+  }
+
+  .pcfo-region-grid {
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .pcfo-region-card {
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .pcfo-region-card::after {
+    top: -92px;
+    right: -92px;
+  }
+
+  .pcfo-region-card-head {
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .pcfo-region-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+  }
+
+  .pcfo-region-card h3 {
+    font-size: 22px;
+  }
+
+  .pcfo-region-card li {
+    grid-template-columns: 18px minmax(0, 1fr);
+    padding: 11px 12px;
+    font-size: 14px;
+  }
+
+  .pcfo-region-close-wrap {
+    padding-top: 20px;
+  }
+
+  .pcfo-region-close {
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
   }
 
   .pcfo-bubble,
