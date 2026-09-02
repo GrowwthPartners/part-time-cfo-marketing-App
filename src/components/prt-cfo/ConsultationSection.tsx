@@ -1,7 +1,9 @@
 import { useState, type FormEvent } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { submitContactForm } from '../../api/contact'
 
 function ConsultationSection() {
+  const navigate = useNavigate()
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>(
     'idle',
   )
@@ -28,7 +30,7 @@ function ConsultationSection() {
 
       form.reset()
       setStatus('success')
-      setMessage('Thanks. We will get back to you within 1 business day.')
+      navigate('/thank-you')
     } catch {
       setStatus('error')
       setMessage('Something went wrong. Please try again in a moment.')
