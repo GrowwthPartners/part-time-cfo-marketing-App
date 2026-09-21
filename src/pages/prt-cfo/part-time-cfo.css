@@ -670,12 +670,14 @@
   gap: 20px;
   padding: 20px 0;
   border-bottom: 1px solid var(--pcfo-divider);
+  color: var(--pcfo-text);
+  text-decoration: none;
   transition:
     background-color 180ms ease,
     padding-inline 180ms ease;
 }
 
-.pcfo-question:last-child {
+.pcfo-question-shell:last-child .pcfo-question {
   border-bottom: 0;
 }
 
@@ -694,6 +696,11 @@
 .pcfo-question:hover {
   padding-inline: 16px;
   background: var(--pcfo-accent-100);
+}
+
+.pcfo-question:focus-visible {
+  outline: 2px solid var(--pcfo-accent-700);
+  outline-offset: 4px;
 }
 
 .pcfo-consult {

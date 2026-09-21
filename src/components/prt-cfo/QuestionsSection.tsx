@@ -1,4 +1,5 @@
 import Reveal from './Reveal'
+import type { MouseEvent } from 'react'
 
 const questions = [
   'Do you struggle to make sense of your financial reports?',
@@ -8,6 +9,17 @@ const questions = [
 ]
 
 function QuestionsSection() {
+  function handleQuestionClick(event: MouseEvent<HTMLAnchorElement>) {
+    const consultationSection = document.querySelector('#cta')
+
+    if (!consultationSection) {
+      return
+    }
+
+    event.preventDefault()
+    consultationSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   return (
     <section className="pcfo-questions" aria-labelledby="questions-title">
       <Reveal>
@@ -15,9 +27,11 @@ function QuestionsSection() {
       </Reveal>
       <div>
         {questions.map((question, index) => (
-          <Reveal className="pcfo-question" delay={index * 0.06} key={question}>
-            <span>{String(index + 1).padStart(2, '0')}</span>
-            <p>{question}</p>
+          <Reveal className="pcfo-question-shell" delay={index * 0.06} key={question}>
+            <a className="pcfo-question" href="#cta" onClick={handleQuestionClick}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <p>{question}</p>
+            </a>
           </Reveal>
         ))}
       </div>

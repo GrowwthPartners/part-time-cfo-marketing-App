@@ -10,6 +10,7 @@ import {
   PricingSection,
   QuestionsSection,
   TrustMetricsSection,
+  WhatsAppWidget,
   WhyUsSection,
 } from '../../components/prt-cfo'
 import './part-time-cfo.css'
@@ -42,6 +43,7 @@ function PartTimeCfoPage() {
           <ComplianceSection />
           <FinalCtaSection />
         </main>
+        <WhatsAppWidget />
         <Footer />
       </div>
     </>
