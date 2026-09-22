@@ -19,7 +19,7 @@ export default function MeetJatinSection() {
           <div className="relative rounded-[2.5rem] border border-[var(--pcfo-divider)] bg-[var(--pcfo-surface)] p-6 text-center shadow-[0_26px_90px_rgba(32,30,29,0.12)]">
             <div className="mx-auto h-64 w-64 overflow-hidden rounded-full border-8 border-[var(--pcfo-bg)] bg-[var(--pcfo-bg)] shadow-[0_22px_70px_rgba(32,30,29,0.16)] sm:h-72 sm:w-72 lg:h-80 lg:w-80">
               <img
-                src="/image/jatin-ceo.jpeg"
+                src="/image/Jatin_detwani_ceo.webp"
                 alt="Jatin Detwani, founder of Growwth Partners"
                 className="h-full w-full object-cover object-center"
                 loading="lazy"

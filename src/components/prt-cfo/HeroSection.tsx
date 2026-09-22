@@ -84,7 +84,15 @@ function HeroSection() {
         </div>
 
         <div className="pcfo-hero-visual">
-          <img src={bannerImage} alt="Business finance consultation meeting" />
+          <img
+            src={bannerImage}
+            alt="Business finance consultation meeting"
+            width="1200"
+            height="630"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+          />
           <div className="pcfo-hero-visual-card">
             <span>Finance partner for founders</span>
             <strong>Clarity before every major decision.</strong>
